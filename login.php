@@ -114,6 +114,7 @@ $mensaje=$_REQUEST['mensaje'];
               </div>
               <div class="col-md-6 col-lg-7 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black">
+                  <!-- Registro -->
                   <form action="controller/guarda_registro.php" method="post">
                     <div class="d-flex align-items-center mb-3 pb-1">
                       <span class="h1 fw-bold mb-0 color-text">Dent</span><span class="h1 fw-bold mb-0">OS</span>
@@ -121,13 +122,22 @@ $mensaje=$_REQUEST['mensaje'];
                     <h3 class="fw-normal" style="letter-spacing: 1px;">Crear una cuenta</h3>
                     <h6 class="fw-normal pb-3" style="letter-spacing: 1px;">A sólo <b>un paso:)</b></h6>
                     <div class="form-outline mb-4">
-                      <input type="email" class="form-control form-control-lg input-editado"  placeholder=" Correo electrónico"/>
+                      <input type="text" name="nombre" class="form-control form-control-lg input-editado"  placeholder=" Nombre" required />
                     </div>
                     <div class="form-outline mb-4">
-                      <input type="password" class="form-control form-control-lg input-editado" placeholder=" Contraseña"/>
+                      <input type="text" name="apellidos" class="form-control form-control-lg input-editado"  placeholder=" Apellido" required />
+                    </div>
+                    <div class="form-outline mb-4">
+                      <input type="email" name="correo" class="form-control form-control-lg input-editado"  placeholder=" Correo electrónico" required />
+                    </div>
+                    <div class="form-outline mb-4">
+                      <input type="date" class="form-control" name="fecha">
+                    </div>
+                    <div class="form-outline mb-4">
+                      <input type="password" name="password" class="form-control form-control-lg input-editado" placeholder=" Contraseña" required />
                     </div>
                     <div class="pt-1 mb-4">
-                      <button class="btn btn-outline-danger btn-lg btn-block" type="button">Crear mi cuenta</button>
+                      <button class="btn btn-outline-danger btn-lg btn-block" id="login">Crear mi cuenta</button>
                     </div>
                     <a data-toggle="collapse" data-target="#collapselogin" href="#" class="color-text-link">¡Ya tengo una cuenta!</a><br>
                     <a href="#!" class="small text-muted">Recuerda siempre usar el botón <b>"Cerrar sesión"</b> cuando salgas de la app.</a>
@@ -203,10 +213,6 @@ $mensaje=$_REQUEST['mensaje'];
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-<!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
-
 </body>
-
 </html>

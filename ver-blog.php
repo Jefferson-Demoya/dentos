@@ -92,7 +92,7 @@ require_once 'controller/dbc.php';
            </div>
          </article><!-- End blog entry -->
 
-        <div class="blog-comments">
+         <div class="blog-comments">
           <h4 class="comments-count">8 Comments</h4>
           <div id="comment-1" class="comment">
             <div class="d-flex">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-03-2022 a las 18:19:49
+-- Tiempo de generación: 27-03-2022 a las 23:36:50
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.9
 
@@ -58,16 +58,19 @@ CREATE TABLE `usuarios` (
   `apellidos` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
   `correo` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
   `cargo` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
+  `password` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
+  `fecha` varchar(12) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `correo`, `cargo`, `password`) VALUES
-(1, 'Jefferson', 'De moya', 'admin@hotmail.com', '1', '$2y$15$ELnajwgjM0Rn0Npfr3zB5u.FbbjJ.ICdUieKiqsCPdUG1K33Aik4W'),
-(2, 'John', 'Doe', 'user@hotmail.com', '2', '$2y$15$ZI/msy.V/x9vzYiBGIsuzuNX/zSQxHAfJ/QfvDSEDRSa/wGC3fFn2');
+INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `correo`, `cargo`, `password`, `fecha`) VALUES
+(1, 'Jefferson', 'De moya', 'admin@hotmail.com', '1', '$2y$15$ELnajwgjM0Rn0Npfr3zB5u.FbbjJ.ICdUieKiqsCPdUG1K33Aik4W', '1997-07-04'),
+(2, 'John', 'Doe', 'user@hotmail.com', '2', '$2y$15$ZI/msy.V/x9vzYiBGIsuzuNX/zSQxHAfJ/QfvDSEDRSa/wGC3fFn2', '1997-07-04'),
+(14, 'Juana', 'Rosas', 'user2@hotmail.com', '2', '$2y$15$0LniFkdzvwHeEadZExPOBeQHDhT4hKp.oAKrxAfc7mw9GYI/XNTKa', '1997-07-04'),
+(15, 'Ellionor', 'Gutts', 'user3@hotmail.com', '2', '$2y$15$GE7g/bAmXp8/4KpjLTycjua8UP.XQR8rIueflekXz3kxaFTMM7wpS', '1997-07-04');
 
 --
 -- Índices para tablas volcadas
@@ -99,7 +102,7 @@ ALTER TABLE `blog`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
