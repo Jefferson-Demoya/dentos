@@ -5,7 +5,7 @@ $BD = 'bd_dentos';
 $usuario = 'root';
 $password = '';
 
-//establezco la conexion con PDO en este caso para MySQL u otro gestor
+//establezco la conexion con PDO 
 $DB = new PDO("mysql:host=$servidor; dbname=$BD", $usuario, $password);
 	
 //aplico el cotejamiento	
