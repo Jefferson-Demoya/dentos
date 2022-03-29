@@ -1,9 +1,7 @@
-<?php
-session_start();
+<?php session_start();
 if($_SESSION['cargo'] != 2){
 	header('location: ../../index.php');
 }
-
 require_once '../../controller/dbc.php';
 ?>
 <!DOCTYPE html>
@@ -11,69 +9,56 @@ require_once '../../controller/dbc.php';
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<link rel="icon" href="../../css/imgs-icono/icon.png">
-	<title>DentOS</title>
-	<link href="../../assets/dashboard//vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-	<link href="../../assets/dashboard//css/sb-admin-2.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<meta name="DentOS" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="../../assets/img/favicon.png">
+	<title>Administrador - DentOS</title>
+	<link href="../../assets/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/dashboard/css/sb-admin-2.css" rel="stylesheet">
+	<link href="../../assets/css/card.css" rel="stylesheet">
 </head>
 <body id="page-top">
-	<!-- Page Wrapper -->
 	<div id="wrapper">
 		<!-- Dashboard inicio -->
 		<ul class="navbar-nav bg-gradient  sidebar sidebar-dark accordion text-white" id="accordionSidebar" style="background-color: #008EC9;">
-			<!-- logo -->
 			<a class="sidebar-brand d-flex align-items-center justify-content-center">
 				<div >
-					<img src="../../assets/img/favicon.png" style=" width: 20%; height: 20%; "><div class="sidebar-brand-text mx-3">Usuario</div>
+					<img src="../../assets/img/favicon.png" style=" width: 20%; height: 20%; "><br>
+					<div class="sidebar-brand-text mx-3">DentOS</div>
 				</div>
 			</a>
-			<!-- Divider -->
 			<hr class="sidebar-divider my-0">
-			<!-- Nav Item - Dashboard -->
 			<li class="nav-item active">
 				<a class="nav-link" href="#">
 					<i class="fas fa-user-tie"></i>
-					<span>Usuario</span>
+					<span>Administrador</span>
 				</a>
 			</li>
-			<!-- Divider -->
 			<hr class="sidebar-divider">
-			<div class="sidebar-heading">Foros</div>
-			<!--Empresarios -->
+			<div class="sidebar-heading">Blogs</div>
+			<!--Blogs -->
 			<li class="nav-item">
-				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEmpresarios" aria-expanded="true" aria-controls="collapseEmpresarios">
-					<i class="fas fa-address-card"></i>
-					<span>Opciones foros</span>
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseListaBlogs" aria-expanded="false" >
+					<i class="fas fa-info-circle"></i>
+					<span>Lista de mis Blogs</span>
 				</a>
-				<div id="collapseEmpresarios" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Seleccione opción:</h6>
-						<a href="#" class="collapse-item" data-toggle="collapse" data-target="#collapseListaForos" aria-expanded="true" aria-controls="collapseOne">Lista de mis foros</a>
-						<a href="#" class="collapse-item" data-toggle="collapse" data-target="#collapseCrearForo" aria-expanded="true" aria-controls="collapseOne">Crear nuevo foro</a>
-					</div>
-				</div>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVerForo" aria-expanded="false" >
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCrearBlog" aria-expanded="false" >
 					<i class="fas fa-info-circle"></i>
-					<span>Ver en el foro</span>
+					<span>Crear nuevo Blog</span>
 				</a>
 			</li>	
 			<hr class="sidebar-divider">
 			<div class="text-center d-none d-md-inline">
 				<button class="rounded-circle border-0" id="sidebarToggle"></button>
 			</div>
-		</ul>
+		</ul><!-- Fin dashboard -->
+
 		<div id="content-wrapper" class="d-flex flex-column">
 			<div id="content">
 				<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 					<!-- boton responsive -->
-
-					<button id="sidebarToggleTop" class="btn btn-outline-danger d-md-none" onclick="cambiar()" style="color:#C05678; width: 100%; border-color:#C05678;">
+					<button id="sidebarToggleTop" class="btn btn-outline-warning d-md-none" onclick="cambiar()" style="color:#ff8039; width: 100%; border-color:#ff8039;">
 						Menú: &nbsp<b id="contenedor">Ocultar</b>
 					</button>
 					<ul class="navbar-nav ml-auto">
@@ -82,9 +67,8 @@ require_once '../../controller/dbc.php';
 						<li class="nav-item dropdown no-arrow">
 							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo ucfirst($_SESSION['nombre']); ?></span>
-								<img class="img-profile rounded-circle" src="../../assets/img/favicon.png">
+								<img class="img-profile rounded-circle" src="../../assets/img/favicon.png"><!-- foto perfil -->
 							</a>
-							<!-- foto perfil dropdown -->
 							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -95,21 +79,29 @@ require_once '../../controller/dbc.php';
 						</li>
 					</ul>
 				</nav>
+				<!-- End of Topbar -->
+
 				<div class="container">
 					<div id="accordion">
-						<div id="collapseOne" class="collapse show" aria-labelledby="heading" data-parent="#accordion">
+						<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 							<div class="card-body">
-								1
+								Bienvenido <br> 
+								Seleccione una de las opciones para continuar.
 							</div>
 						</div>
-						<div id="collapseTwo" class="collapse" aria-labelledby="heading" data-parent="#accordion">
+						<div id="collapseListaBlogs" class="collapse " aria-labelledby="heading" data-parent="#accordion">
 							<div class="card-body">
-								2
+								<?php include 'lista-de-blogs.php'?>
 							</div>
 						</div>
-						<div id="collapseMensaje" class="collapse" aria-labelledby="heading" data-parent="#accordion">
+						<div id="collapseCrearBlog" class="collapse " aria-labelledby="heading" data-parent="#accordion">
 							<div class="card-body">
-								3
+								<?php include 'crear-blog.php'?>
+							</div>
+						</div>
+						<div id="collapseVerForo" class="collapse " aria-labelledby="heading" data-parent="#accordion">
+							<div class="card-body">
+								opcion3
 							</div>
 						</div>
 					</div>
@@ -118,15 +110,18 @@ require_once '../../controller/dbc.php';
 			<footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
-						<span>© jefferson</span> <!-- Jefersson Andrés De moya Montoya-->
+						<span>© Jeferson</span> <!-- Jefersson Andrés De moya Montoya-->
 					</div>
 				</div>
 			</footer><!-- End of Footer -->
-		</div>
-	</div>
+		</div><!--fin Content Wrapper -->
+	</div><!-- fin Page Wrapper -->
+
+	<!-- Scroll top-->
 	<a class="scroll-to-top rounded" href="#page-top">
 		<i class="fas fa-angle-up"></i>
 	</a>
+
 	<!-- Logout Modal-->
 	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
@@ -147,11 +142,10 @@ require_once '../../controller/dbc.php';
 	</div>
 
 	<!-- Bootstrap core JavaScript-->
-	<script src="../../assets/dashboard//vendor/jquery/jquery.min.js"></script>
-	<script src="../../assets/dashboard//vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<!-- Core plugin JavaScript-->
-	<script src="../../assets/dashboard//vendor/jquery-easing/jquery.easing.min.js"></script>
-	<script src="../../assets/dashboard//js/sb-admin-2.min.js"></script>
+	<script src="../../assets/dashboard/vendor/jquery/jquery.min.js"></script>
+	<script src="../../assets/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="../../assets/dashboard/vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src="../../assets/dashboard/js/sb-admin-2.min.js"></script>
 </body>
 <script type="text/javascript">
 	console.log(<?php echo $_SESSION['id']; ?>)

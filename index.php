@@ -48,7 +48,7 @@ require_once 'controller/dbc.php';
         <ol>
           <li><a href="index.php">Inicio</a></li>
         </ol>
-        <h2>Blog</h2>
+        <h2>Blogs destacados</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
@@ -111,7 +111,7 @@ require_once 'controller/dbc.php';
               <h3 class="sidebar-title">Posts recientes
               </h3>
               <div class="sidebar-item recent-posts">
-                <?php foreach ($DB->query('SELECT * FROM blog LIMIT 6') as $row ){  ?> 
+                <?php foreach ($DB->query('SELECT * FROM blog  ORDER BY fecha DESC LIMIT 10') as $row ){  ?> 
                   <div class="post-item clearfix">
                     <img src="assets/img/blog/blog-recent-<?php echo $row['id']; ?>.jpg" alt="">
                     <h4><a href="ver-blog.php?/=<?php echo $row['id']; ?>"><?php echo $row['titulo']; ?></a></h4>

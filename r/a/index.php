@@ -1,5 +1,4 @@
-<?php
-session_start();
+<?php session_start();
 if($_SESSION['cargo'] != 1){
 	header('location: ../../index.php');
 }
@@ -15,6 +14,7 @@ require_once '../../controller/dbc.php';
 	<title>Administrador - DentOS</title>
 	<link href="../../assets/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 	<link href="../../assets/dashboard/css/sb-admin-2.css" rel="stylesheet">
+	<link href="../../assets/css/card.css" rel="stylesheet">
 </head>
 <body id="page-top">
 	<div id="wrapper">
@@ -34,25 +34,18 @@ require_once '../../controller/dbc.php';
 				</a>
 			</li>
 			<hr class="sidebar-divider">
-			<div class="sidebar-heading">Foros</div>
-			<!--Empresarios -->
+			<div class="sidebar-heading">Blogs</div>
+			<!--Blogs -->
 			<li class="nav-item">
-				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEmpresarios" aria-expanded="true" aria-controls="collapseEmpresarios">
-					<i class="fas fa-address-card"></i>
-					<span>Opciones foros</span>
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseListaBlogs" aria-expanded="false" >
+					<i class="fas fa-info-circle"></i>
+					<span>Lista de mis Blogs</span>
 				</a>
-				<div id="collapseEmpresarios" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Seleccione opción:</h6>
-						<a href="#" class="collapse-item" data-toggle="collapse" data-target="#collapseListaForos" aria-expanded="true" aria-controls="collapseOne">Lista de mis foros</a>
-						<a href="#" class="collapse-item" data-toggle="collapse" data-target="#collapseCrearForo" aria-expanded="true" aria-controls="collapseOne">Crear nuevo foro</a>
-					</div>
-				</div>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVerForo" aria-expanded="false" >
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCrearBlog" aria-expanded="false" >
 					<i class="fas fa-info-circle"></i>
-					<span>Ver en el foro</span>
+					<span>Crear nuevo Blog</span>
 				</a>
 			</li>	
 			<hr class="sidebar-divider">
@@ -96,14 +89,14 @@ require_once '../../controller/dbc.php';
 								Seleccione una de las opciones para continuar.
 							</div>
 						</div>
-						<div id="collapseListaForos" class="collapse " aria-labelledby="heading" data-parent="#accordion">
+						<div id="collapseListaBlogs" class="collapse " aria-labelledby="heading" data-parent="#accordion">
 							<div class="card-body">
-								opcion1
+								<?php include 'lista-de-blogs.php'?>
 							</div>
 						</div>
-						<div id="collapseCrearForo" class="collapse " aria-labelledby="heading" data-parent="#accordion">
+						<div id="collapseCrearBlog" class="collapse " aria-labelledby="heading" data-parent="#accordion">
 							<div class="card-body">
-								opcion2
+								<?php include 'crear-blog.php'?>
 							</div>
 						</div>
 						<div id="collapseVerForo" class="collapse " aria-labelledby="heading" data-parent="#accordion">
